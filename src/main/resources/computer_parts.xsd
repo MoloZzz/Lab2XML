@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Devices">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Device" type="DeviceType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="DeviceType">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Origin" type="xs:string"/>
+            <xs:element name="Price" type="xs:decimal"/>
+            <xs:element name="Type" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="Critical" type="xs:boolean"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+</xs:schema>

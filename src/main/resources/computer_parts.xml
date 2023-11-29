@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="computer_parts.xsd">
+    <Device id="1">
+        <Name>Processor</Name>
+        <Origin>USA</Origin>
+        <Price>300</Price>
+        <Type>Peripheral</Type>
+        <Type>EnergyConsumption</Type>
+        <Type>Cooler</Type>
+        <Critical>true</Critical>
+    </Device>
+    <Device id="2">
+        <Name>Memory</Name>
+        <Origin>China</Origin>
+        <Price>150</Price>
+        <Type>Peripheral</Type>
+        <Type>Memory</Type>
+        <Critical>false</Critical>
+    </Device>
+</Devices>
