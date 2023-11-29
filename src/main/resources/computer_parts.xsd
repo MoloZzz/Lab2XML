@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="Devices">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Device" type="DeviceType" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           targetNamespace="http://example.com"
+           xmlns:ex="http://example.com"
+           elementFormDefault="qualified"
+           xsi:noNamespaceSchemaLocation="computer_parts.xsd">
+
+    <xs:element name="Devices" type="ex:DevicesType"/>
+
+    <xs:complexType name="DevicesType">
+        <xs:sequence>
+            <xs:element name="Device" maxOccurs="unbounded" type="ex:DeviceType"/>
+        </xs:sequence>
+    </xs:complexType>
 
     <xs:complexType name="DeviceType">
         <xs:sequence>
             <xs:element name="Name" type="xs:string"/>
             <xs:element name="Origin" type="xs:string"/>
-            <xs:element name="Price" type="xs:decimal"/>
-            <xs:element name="Type" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="Price" type="xs:double"/>
+            <xs:element name="Type" type="xs:string" maxOccurs="unbounded"/>
             <xs:element name="Critical" type="xs:boolean"/>
         </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="id" type="xs:string" use="required"/>
     </xs:complexType>
+
 </xs:schema>

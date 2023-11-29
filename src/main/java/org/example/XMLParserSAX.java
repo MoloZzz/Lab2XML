@@ -7,11 +7,12 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 public class XMLParserSAX {
 
-    public static void parseXML(String filePath){
+    public static List<Device> parseXML(String filePath){
         try{
             SAXParserFactory factory = SAXParserFactory.newInstance();
 
@@ -21,9 +22,14 @@ public class XMLParserSAX {
 
             saxParser.parse(filePath, handler);
 
+            return handler.getDevices();
+
+
         }catch (Exception e){
             e.printStackTrace();
+            return Collections.emptyList();
         }
+
 
     }
 
@@ -32,6 +38,9 @@ public class XMLParserSAX {
         private Device currentDevice;
         private StringBuilder currentText;
 
+        public List<Device> getDevices() {
+            return devices;
+        }
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             currentText = new StringBuilder();
@@ -81,9 +90,9 @@ public class XMLParserSAX {
 
         @Override
         public void endDocument() throws SAXException {
-            for (Device device : devices) {
-                System.out.println(device);
-            }
+//            for (Device device : devices) {
+//                System.out.println(device);
+//            }
         }
 
     }

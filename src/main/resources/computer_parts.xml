@@ -18,4 +18,89 @@
         <Type>Memory</Type>
         <Critical>false</Critical>
     </Device>
+    <Device id="3">
+        <Name>Graphics Card</Name>
+        <Origin>Taiwan</Origin>
+        <Price>500</Price>
+        <Type>Peripheral</Type>
+        <Type>Graphics</Type>
+        <Critical>true</Critical>
+    </Device>
+
+    <Device id="4">
+        <Name>Hard Drive</Name>
+        <Origin>Japan</Origin>
+        <Price>200</Price>
+        <Type>Storage</Type>
+        <Critical>false</Critical>
+    </Device>
+
+    <Device id="5">
+        <Name>Monitor</Name>
+        <Origin>Korea</Origin>
+        <Price>350</Price>
+        <Type>Peripheral</Type>
+        <Type>Display</Type>
+        <Critical>true</Critical>
+    </Device>
+
+    <Device id="6">
+        <Name>Keyboard</Name>
+        <Origin>Germany</Origin>
+        <Price>50</Price>
+        <Type>Peripheral</Type>
+        <Type>Input</Type>
+        <Critical>false</Critical>
+    </Device>
+
+    <Device id="7">
+        <Name>Mouse</Name>
+        <Origin>China</Origin>
+        <Price>30</Price>
+        <Type>Peripheral</Type>
+        <Type>Input</Type>
+        <Critical>false</Critical>
+    </Device>
+
+    <Device id="8">
+        <Name>Motherboard</Name>
+        <Origin>USA</Origin>
+        <Price>120</Price>
+        <Type>Component</Type>
+        <Critical>true</Critical>
+    </Device>
+
+    <Device id="9">
+        <Name>SSD</Name>
+        <Origin>South Korea</Origin>
+        <Price>180</Price>
+        <Type>Storage</Type>
+        <Critical>false</Critical>
+    </Device>
+
+    <Device id="10">
+        <Name>Power Supply</Name>
+        <Origin>Germany</Origin>
+        <Price>80</Price>
+        <Type>Peripheral</Type>
+        <Critical>true</Critical>
+    </Device>
+
+    <Device id="11">
+        <Name>Headphones</Name>
+        <Origin>USA</Origin>
+        <Price>100</Price>
+        <Type>Peripheral</Type>
+        <Type>Audio</Type>
+        <Critical>false</Critical>
+    </Device>
+
+    <Device id="12">
+        <Name>Webcam</Name>
+        <Origin>China</Origin>
+        <Price>40</Price>
+        <Type>Peripheral</Type>
+        <Type>Video</Type>
+        <Critical>false</Critical>
+    </Device>
 </Devices>
