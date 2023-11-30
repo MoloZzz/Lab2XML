@@ -3,8 +3,6 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Comparator;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 public class Device {
     private String id;
     private String name;
@@ -12,11 +10,9 @@ public class Device {
     private double price;
     private List<String> types;
     private boolean critical;
-
     Device() {
         types = new ArrayList<>();
     }
-
     void printDetails() {
         System.out.println("Device ID: " + id);
         System.out.println("Device Name: " + name);
@@ -72,30 +68,4 @@ public class Device {
             return Double.compare(device1.getPrice(), device2.getPrice());
         }
     }
-
-    public Element toXmlElement(Document doc) {
-        Element deviceElement = doc.createElement("Device");
-        deviceElement.setAttribute("id", this.id);
-
-        appendXmlElement(doc, deviceElement, "Name", this.name);
-        appendXmlElement(doc, deviceElement, "Origin", this.origin);
-        appendXmlElement(doc, deviceElement, "Price", String.valueOf(this.price));
-
-        Element typesElement = doc.createElement("Types");
-        for (String type : this.types) {
-            appendXmlElement(doc, typesElement, "Type", type);
-        }
-        deviceElement.appendChild(typesElement);
-
-        appendXmlElement(doc, deviceElement, "Critical", String.valueOf(this.critical));
-
-        return deviceElement;
-    }
-
-    private void appendXmlElement(Document doc, Element parentElement, String tagName, String textContent) {
-        Element element = doc.createElement(tagName);
-        element.appendChild(doc.createTextNode(textContent));
-        parentElement.appendChild(element);
-    }
-
 }

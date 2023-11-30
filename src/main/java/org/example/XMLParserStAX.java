@@ -48,7 +48,6 @@ public class XMLParserStAX {
                         }
                         break;
                     case XMLStreamConstants.END_ELEMENT:
-                        // Виведення результатів при закінченні елементу "Device"
                         if ("Device".equals(reader.getLocalName())) {
                             System.out.println("Device ID: " + id);
                             System.out.println("Device Name: " + name);
