@@ -10,6 +10,15 @@ public class Device {
     private double price;
     private List<String> types;
     private boolean critical;
+
+    Device(String id,String name,String origin,double price,List<String> types,boolean critical){
+        this.id = id;
+        this.name = name;
+        this.origin = origin;
+        this.price = price;
+        this.types = types;
+        this.critical = critical;
+    }
     Device() {
         types = new ArrayList<>();
     }
